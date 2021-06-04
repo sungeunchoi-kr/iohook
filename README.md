@@ -1,3 +1,8 @@
+# iohook (sungeunchoi.kr fork)
+This project is a fork of `iohook` that has the mouse events disabled.
+
+Below is the original iohook README:
+
 # iohook
 
 [![Build status](https://ci.appveyor.com/api/projects/status/2ntnlh6k953he5is?svg=true)](https://ci.appveyor.com/project/Djiit/iohook)
