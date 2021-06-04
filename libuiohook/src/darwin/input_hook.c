@@ -991,78 +991,87 @@ CGEventRef hook_event_proc(CGEventTapProxy tap_proxy, CGEventType type, CGEventR
 			break;
 
 		case kCGEventLeftMouseDown:
-			set_modifier_mask(MASK_BUTTON1);
-			process_button_pressed(timestamp, event_ref, MOUSE_BUTTON1);
+			// EDIT: disable mouse events
+			// set_modifier_mask(MASK_BUTTON1);
+			// process_button_pressed(timestamp, event_ref, MOUSE_BUTTON1);
 			break;
 
 		case kCGEventRightMouseDown:
-			set_modifier_mask(MASK_BUTTON2);
-			process_button_pressed(timestamp, event_ref, MOUSE_BUTTON2);
+			// EDIT: disable mouse events
+			// set_modifier_mask(MASK_BUTTON2);
+			// process_button_pressed(timestamp, event_ref, MOUSE_BUTTON2);
 			break;
 
 		case kCGEventOtherMouseDown:
-			// Extra mouse buttons.
-			if (CGEventGetIntegerValueField(event_ref, kCGMouseEventButtonNumber) < UINT16_MAX) {
-				uint16_t button = (uint16_t) CGEventGetIntegerValueField(event_ref, kCGMouseEventButtonNumber) + 1;
+			// EDIT: disable mouse events
+			// // Extra mouse buttons.
+			// if (CGEventGetIntegerValueField(event_ref, kCGMouseEventButtonNumber) < UINT16_MAX) {
+			// 	uint16_t button = (uint16_t) CGEventGetIntegerValueField(event_ref, kCGMouseEventButtonNumber) + 1;
 
-				// Add support for mouse 4 & 5.
-				if (button == 4) {
-					set_modifier_mask(MOUSE_BUTTON4);
-				}
-				else if (button == 5) {
-					set_modifier_mask(MOUSE_BUTTON5);
-				}
+			// 	// Add support for mouse 4 & 5.
+			// 	if (button == 4) {
+			// 		set_modifier_mask(MOUSE_BUTTON4);
+			// 	}
+			// 	else if (button == 5) {
+			// 		set_modifier_mask(MOUSE_BUTTON5);
+			// 	}
 
-				process_button_pressed(timestamp, event_ref, button);
-			}
+			// 	process_button_pressed(timestamp, event_ref, button);
+			// }
 			break;
 
 		case kCGEventLeftMouseUp:
-			unset_modifier_mask(MASK_BUTTON1);
-			process_button_released(timestamp, event_ref, MOUSE_BUTTON1);
+			// EDIT: disable mouse events
+			// unset_modifier_mask(MASK_BUTTON1);
+			// process_button_released(timestamp, event_ref, MOUSE_BUTTON1);
 			break;
 
 		case kCGEventRightMouseUp:
-			unset_modifier_mask(MASK_BUTTON2);
-			process_button_released(timestamp, event_ref, MOUSE_BUTTON2);
+			// EDIT: disable mouse events
+			// unset_modifier_mask(MASK_BUTTON2);
+			// process_button_released(timestamp, event_ref, MOUSE_BUTTON2);
 			break;
 
 		case kCGEventOtherMouseUp:
-			// Extra mouse buttons.
-			if (CGEventGetIntegerValueField(event_ref, kCGMouseEventButtonNumber) < UINT16_MAX) {
-				uint16_t button = (uint16_t) CGEventGetIntegerValueField(event_ref, kCGMouseEventButtonNumber) + 1;
+			// EDIT: disable mouse events
+			// // Extra mouse buttons.
+			// if (CGEventGetIntegerValueField(event_ref, kCGMouseEventButtonNumber) < UINT16_MAX) {
+			// 	uint16_t button = (uint16_t) CGEventGetIntegerValueField(event_ref, kCGMouseEventButtonNumber) + 1;
 
-				// Add support for mouse 4 & 5.
-				if (button == 4) {
-					unset_modifier_mask(MOUSE_BUTTON4);
-				}
-				else if (button == 5) {
-					unset_modifier_mask(MOUSE_BUTTON5);
-				}
+			// 	// Add support for mouse 4 & 5.
+			// 	if (button == 4) {
+			// 		unset_modifier_mask(MOUSE_BUTTON4);
+			// 	}
+			// 	else if (button == 5) {
+			// 		unset_modifier_mask(MOUSE_BUTTON5);
+			// 	}
 
-				process_button_pressed(timestamp, event_ref, button);
-			}
+			// 	process_button_pressed(timestamp, event_ref, button);
+			// }
 			break;
 
 
 		case kCGEventLeftMouseDragged:
 		case kCGEventRightMouseDragged:
 		case kCGEventOtherMouseDragged:
-			// FIXME The drag flag is confusing.  Use prev x,y to determine click.
-			// Set the mouse dragged flag.
-			mouse_dragged = true;
-			process_mouse_moved(timestamp, event_ref);
+			// EDIT: disable mouse events
+			// // FIXME The drag flag is confusing.  Use prev x,y to determine click.
+			// // Set the mouse dragged flag.
+			// mouse_dragged = true;
+			// process_mouse_moved(timestamp, event_ref);
 			break;
 
 		case kCGEventMouseMoved:
-			// Set the mouse dragged flag.
-			mouse_dragged = false;
-			process_mouse_moved(timestamp, event_ref);
+			// EDIT: disable mouse events
+			// // Set the mouse dragged flag.
+			// mouse_dragged = false;
+			// process_mouse_moved(timestamp, event_ref);
 			break;
 
 
 		case kCGEventScrollWheel:
-			process_mouse_wheel(timestamp, event_ref);
+			// EDIT: disable mouse events
+			// process_mouse_wheel(timestamp, event_ref);
 			break;
 
 
